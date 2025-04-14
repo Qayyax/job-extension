@@ -9,16 +9,8 @@
   "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": "<all_urls>",
-      "js": ["content.js"] // So this is where the html parsing would take place
+      "matches": ["https://www.linkedin.com/jobs/collections/"],
+      "js": ["linkedin.js"] 
     }
   ]
 }
-
-// would come back to icons here
-// what I want to do now is make the extension read text from linkedin and other job sites maybe
-// I am guessing I would need the content_scripts
-// but I don't want to start writing out all the job websites in an array 
-// found something, "matches": "<all_urls>" for the content
-// I think I would make an html form that the user would fill in their resume details as well, so that the AI can use that to make the new resume based on the job description
-// 
