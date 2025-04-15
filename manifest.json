@@ -3,11 +3,25 @@
   "name": "Job Description Analyzer",
   "version": "1.0.0",
   "description": "A chrome extension that uses AI to adjust your resume based on the job description",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
-  "permissions": ["storage"],
+  "action": {
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
   "content_scripts": [
     {
       "matches": ["https://www.linkedin.com/jobs/*"],
@@ -16,7 +30,12 @@
       "all_frames": true
     }
   ],
-  "action": {
-    "default_popup": "index.html"
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
   }
 }
