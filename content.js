@@ -1,4 +1,4 @@
-console.log("this script is working");
+console.log("From Content.js");
 
 const getData = async () => {
   return new Promise((resolve, reject) => {
@@ -16,17 +16,15 @@ const getData = async () => {
         clearInterval(interval);
         reject("Timeout....");
       }
-    }, 1000);
+    }, 3000);
   });
 };
 
-// getData().then((data) => console.log("FINALLY:", data));
 (async () => {
   const data = await getData();
   console.log(data);
+  // would pass this data to js
 })();
 
-//
-//"https://www.linkedin.com/jobs/collections/*",
-// so it was  a react problem
-// would make a function to run every interval until "testing exist, when testing does, then we continue"
+// given up on the other part for now, would update later
+// want to make the extension only work when we click it and not at the beginning
